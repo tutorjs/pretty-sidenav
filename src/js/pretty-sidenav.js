@@ -4,7 +4,9 @@
 */
 
 ;(function(root, factory) {
+
   root.PrettySidenav = factory();
+
 })(this, function(){
 
   function el(element) {
@@ -71,11 +73,11 @@
     if (this.options.position === 'left') { 
       close[0].style.marginLeft = 50 + 'px';
       close[0].style.right = 25 + 'px'; 
-    }
-    else {
+    } else if (this.options.position === 'right') {
       close[0].style.marginRight = 50 + 'px'; 
       close[0].style.left = 25 + 'px';
     }
+
     close[0].addEventListener('click', function() {
       target.style.width = 0 + 'px';
     });
