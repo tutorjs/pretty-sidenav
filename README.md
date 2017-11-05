@@ -58,7 +58,7 @@ https://rawgit.com/tutorjs/pretty-sidenav/master/src/js/pretty-sidenav.js
   new PrettySidenav({
     navigation: '.your-navigation',
     position: 'left', // left or right
-    children: 'a', // element html
+    children: 'a', // element html children from your navigation
     trigger: '.open-navigation', // trigger for open navigation
     width: 300, // optional width (default) 250px
     background: '#34495e', // optional
