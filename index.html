@@ -6,6 +6,24 @@
   <link rel="stylesheet" href="src/css/pretty-sidenav.css">
   <style>
 
+    pre {
+      background: #f2f2f2;
+      padding: 10px;
+    }
+
+    footer {
+      padding: 20px;
+      background: #f2f2f2;
+    }
+
+    .copyright {
+      text-align: center;
+    }
+  
+    .love {
+      color: red;
+    }
+
     .container {
       max-width: 800px;
       margin: 0 auto;
@@ -30,8 +48,6 @@
     <a href="#">Home</a>
     <a href="#">About</a>
     <a href="#">Contact</a>
-    <a href="#">Baru</a>
-    <a href="#">Saya</a>
   </div>
 
   <!-- Side Navigation -->
@@ -39,16 +55,34 @@
     <a href="#">Home</a>
     <a href="#">About</a>
     <a href="#">Contact</a>
-    <a href="#">Baru</a>
-    <a href="#">Saya</a>
   </div>
 
   <!-- Main -->
   <div class="container">
+  
+    <h1>Example Pretty Navigation</h1>
+
     <!-- Open Navigation -->
     <span class="open-navigation-left">
       &#9776; Open Navigation Left
     </span>
+
+    <pre>
+      <code>
+      
+        // Pretty Sidenav Navigation Left
+        new PrettySidenav({
+          navigation: '.my-navigation-left',
+          position: 'left',
+          children: 'a',
+          trigger: '.open-navigation-left',
+          width: 250,
+          background: '#34495e',
+          color: '#fff'
+        });
+
+      </code>
+    </pre>
 
     <br/>
 
@@ -56,7 +90,31 @@
     <span class="open-navigation-right">
       &#9776; Open Navigation Right
     </span>  
+    
+    <pre>
+      <code>
+      
+        // Pretty Sidenav Navigation Right
+        new PrettySidenav({
+          navigation: '.my-navigation-right',
+          position: 'right',
+          children: 'a',
+          trigger: '.open-navigation-right',
+          width: 250,
+          background: '#1abc9c',
+          color: '#fff'
+        });
+
+      </code>
+    </pre>
+
   </div>
+
+  <footer>
+    <div class="container">
+      <p class="copyright">Crafted With <span class="love">&hearts;</span></p>  
+    </div>
+  </footer>
 
   <script src="src/js/pretty-sidenav.js"></script>
   <script>
