@@ -1,0 +1,8 @@
+{
+  "name": "pretty-sidenav",
+  "version": "0.1.0",
+  "description": "Simple Side Navigation.",
+  "main": "index.js",
+  "author": "Adiatma Kamarudin <adiatma9024@gmail.com>",
+  "license": "MIT"
+}
