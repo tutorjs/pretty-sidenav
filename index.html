@@ -3,72 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <title>Pretty Sidenav Example</title>
+  <link rel="stylesheet" href="src/css/pretty-sidenav.css">
   <style>
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
     
-    /**
-    * Side Navigation
-    * <adiatma9024@gmail.com>
-    */
-
-    *,
-    *::after,
-    *::before {
-
-    }
-
-    html,
-    body {
-      transition: background-color .5s;
-    }
-
-    .side-navigation {
-      height: 100%;
-      width: 0;
-      position: fixed;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      background-color: #111;
-      overflow-x: hidden;
-      transition: 0.5s;
-      padding-top: 60px; 
-    }
-
-    .side-navigation > .side-navigation__item {
-      padding: 8px 8px 8px 32px;
-      text-decoration: none;
-      font-size: 25px;
-      color: #818181;
-      display: block;
-      transition: 0.3s;
-    }
-
-    .side-navigation > .side-navigation__item:hover {
-      color: #ddd;
-    }
-
-    .side-navigation > .close-button {
-      text-decoration: none;
-      color: #818181;
-      position: absolute;
-      top: 0;
-      right: 25px;
-      font-size: 36px;
-      margin-left: 50x;
-    }
-
-    .side-navigation > .close-button:hover {
-      color: #ddd;
-    }
-
-    .open-navigation {
+    .open-navigation-left {
       font-size: 30px;
       cursor: pointer;
     }
 
-    .main {
-      transition: margin-left 0.5s;
-      padding: 16px;
+    .open-navigation-right {
+      font-size: 30px;
+      cursor: pointer;
     }
 
   </style>
@@ -76,42 +26,63 @@
 <body>
   
   <!-- Side Navigation -->
-  <div class="side-navigation">
-    <a href="javascript:void(0)" class="close-button" onclick="closeNav()">&times;</a>
-    <a href="#" class="side-navigation__item">Home</a>
-    <a href="#" class="side-navigation__item">About</a>
-    <a href="#" class="side-navigation__item">Contact</a>
+  <div class="my-navigation-left">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+    <a href="#">Baru</a>
+    <a href="#">Saya</a>
+  </div>
+
+  <!-- Side Navigation -->
+  <div class="my-navigation-right">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+    <a href="#">Baru</a>
+    <a href="#">Saya</a>
   </div>
 
   <!-- Main -->
-  <div class="main">
-  
+  <div class="container">
     <!-- Open Navigation -->
-    <span class="open-navigation" onclick="openNav()">
-      &#9776;
+    <span class="open-navigation-left">
+      &#9776; Open Navigation Left
+    </span>
+
+    <br/>
+
+    <!-- Open Navigation -->
+    <span class="open-navigation-right">
+      &#9776; Open Navigation Right
     </span>  
-  
   </div>
 
-
+  <script src="src/js/pretty-sidenav.js"></script>
   <script>
-
-    var sideNavigation = document.querySelector('.side-navigation');
-    var main = document.querySelector('.main');
-    var body = document.querySelector('body');
-
-    function openNav() {
-      sideNavigation.style.width = '250px';
-      main.style.marginLeft = '250px';
-      body.style.backgroundColor = 'rgba(0,0,0, .4)';
-    }
-
-    function closeNav() {
-      sideNavigation.style.width = '0px';
-      main.style.marginLeft = '0px';
-      body.style.backgroundColor = '';
-    }
     
+    // Pretty Sidenav Navigation Left
+    new PrettySidenav({
+      navigation: '.my-navigation-left',
+      position: 'left',
+      children: 'a',
+      trigger: '.open-navigation-left',
+      width: 250,
+      background: '#34495e',
+      color: '#fff'
+    });
+
+    // Pretty Sidenav Navigation Right
+    new PrettySidenav({
+      navigation: '.my-navigation-right',
+      position: 'right',
+      children: 'a',
+      trigger: '.open-navigation-right',
+      width: 250,
+      background: '#1abc9c',
+      color: '#fff'
+    });
+
   </script>
 
 </body>
